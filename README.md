@@ -2,6 +2,8 @@
 
 IMDb Movies TV Shows Ratings Counts, Using Google Search web scraping techniques
 
+# Since Bms doesn't provide an API key, so used Google's displayed text to fetch and display the output
+
 Just Enter Movie Name or Movie Name With Year
 
 you can change the text in the URL for another search.
