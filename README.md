@@ -8,9 +8,9 @@ you can change the text in the URL for another search.
 
 # For example, in the URL 
 
-https://bookmyshow-movies-live-ratings-count.onrender.com/krish 3
+https://bookmyshow-movies-live-ratings-count.onrender.com/Saaho
 
-change "krish 3" to the name of another movie.
+change "Saaho" to the name of another movie.
 
 # Search Here:
 
