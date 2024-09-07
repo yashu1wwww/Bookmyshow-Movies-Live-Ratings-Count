@@ -24,96 +24,166 @@ let browser;
 
 app.get('/', (req, res) => {
     res.send(`
-        <html>
-            <head>
-                <meta charset="UTF-8">
-                <meta http-equiv="X-UA-Compatible" content="IE=edge">
-                <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>BookMyShow Ratings</title>
-                <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-                <link rel="icon" href="https://m.media-amazon.com/images/G/01/imdb/images-ANDW73HA/favicon_desktop_32x32._CB1582158068_.png" type="image/x-icon">
-                <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-                <style>
-                    body {
-                        background-image: url('https://wallpaperaccess.com/full/1567770.gif');
-                        background-size: cover;
-                        background-repeat: no-repeat;
-                        background-attachment: fixed;
-                        color: white;
-                        text-align: center;
+        <!DOCTYPE html>
+        <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+            <link rel="icon" href="https://leetcode.com/favicon.ico" type="image/x-icon">
+            <style>
+                html, body {
+                    overflow: hidden;
+                    margin: 0;
+                    padding: 0;
+                    height: 100vh;
+                }
+
+                body {
+                    font-family: Arial, sans-serif;
+                    background-image: url('https://i.postimg.cc/wvTfCXdv/plant-leaf-flower-blossom.png');
+                    background-size: cover;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-color: #f2f2f2;
+                    font-size: 16px;
+                    color: #ffffff;
+                }
+
+                .container {
+                    text-align: center; 
+                    margin-top: 50px; 
+                }
+
+                .target-cursor {
+                    width: 20px;
+                    height: 20px;
+                    background-color: transparent;
+                    border: 2px solid #333;
+                    border-radius: 50%;
+                    position: absolute;
+                    transform: translate(-50%, -50%);
+                    pointer-events: none;
+                    animation: moveCursor 0.3s infinite alternate;
+                }
+
+                @keyframes moveCursor {
+                    0% {
+                        transform: translate(-50%, -50%) scale(1);
+                        opacity: 1;
                     }
-                    .container {
-                        padding-top: 100px;
+                    100% {
+                        transform: translate(-50%, -50%) scale(1.5);
+                        opacity: 0.5;
                     }
-                    .form-container {
-                        background: rgba(0, 0, 0, 0.5);
-                        padding: 58px;
-                        border-radius: 40px;
-                        display: inline-block;
+                }
+
+                .search-container {
+                    margin-top: 20px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+
+                .username-input {
+                    padding: 10px;
+                    font-size: 16px;
+                    border: 2px solid #0074D9;
+                    border-radius: 4px 0 0 4px;
+                    width: 300px;
+                    margin-right: -2px; 
+                }
+
+                .search-button {
+                    padding: 10px 20px;
+                    font-size: 16px;
+                    background-color: #0074D9;
+                    color: #fff;
+                    border: 2px solid #0074D9;
+                    border-radius: 0 4px 4px 0;
+                    cursor: pointer;
+                    transition: background-color 0.3s ease;
+                    font-family: Arial, sans-serif;
+                }
+
+                .search-button:hover {
+                    background-color: #0056b3;
+                    border-color: #0056b3;
+                    color: #fff;
+                }
+
+                .footer-button {
+                    background-color: #00000094;
+                    padding: 2px 20px;
+                    color: white;
+                    text-decoration: none;
+                    font-size: 18px;
+                    font-weight: bold;
+                    border-radius: 5px;
+                }
+
+                .footer-button:hover {
+                    opacity: 0.7;
+                }
+            </style>
+            <title>BookMyShow Ratings Finder</title>
+        </head>
+        <body>
+            <div class="target-cursor"></div>
+            <p align="center">
+                <b><img src="https://readme-typing-svg.herokuapp.com?font=Montserrat&size=20&duration=5001&color=8B0000&vCenter=true&center=true&width=460&lines=BOOKMYSHOW+MOVIES+LIVE+RATINGS;HAPPY+SEARCHING...!"></b>
+            </p>
+            <br>
+            <div class="container">
+			 <button style="background-color: #d5c5b57d; padding: 10px 20px; margin-right: 10px;">
+        <a style="color: black; text-decoration: none; font-size: 14px; font-weight: bold;">BOOKMYSHOW MOVIES LIVE RATING COUNT</a>
+    </button>
+    <br><br>
+                <button style="background-color: white; padding: 10px 20px; margin-right: 10px;">
+                    <a href="mailto:yashwanth6678@gmail.com" style="color: black; text-decoration: none; font-size: 18px; font-weight: bold;">Contact Me</a>
+                </button>
+                <button style="background-color: white; padding: 10px 20px; margin-left: 10px;">
+                    <a href="https://github.com/yashu1wwww" style="color: black; text-decoration: none; font-size: 18px; font-weight: bold;">GitHub Account</a>
+                </button>
+                <br><br>
+                <button style="background-color: white; padding: 10px 20px;">
+                    <a href="https://yashwanthwebproject.netlify.app" style="color: black; text-decoration: none; font-size: 18px; font-weight: bold;">Web Development Projects</a>
+                </button>
+            </div>
+            <div class="search-container">
+                <input type="text" class="username-input" id="query" placeholder="Enter Movie Name">
+                <button class="search-button" onclick="search()">Search</button>
+            </div>
+            <br>
+            <div id="result"></div>
+            <div class="container" style="margin-top: 20px;">
+                <button class="footer-button">© ® Developed By Yashwanth R</button>
+            </div>
+            <script>
+                const targetCursor = document.querySelector('.target-cursor');
+                document.addEventListener('mousemove', (e) => {
+                    targetCursor.style.left = e.clientX + 'px';
+                    targetCursor.style.top = e.clientY + 'px';
+                });
+
+                function search() {
+                    const query = document.getElementById('query').value.trim();
+                    if (query) {
+                        window.location.href = '/search?query=' + encodeURIComponent(query);
+                    } else {
+                        alert('Please enter a movie name');
                     }
-                    .result-container {
-                        margin-top: 20px;
+                }
+
+                // Add event listener for "Enter" key press
+                document.getElementById('query').addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter') {
+                        search();
                     }
-                    h4 {
-                        color: black;
-                    }
-                    button {
-                        margin-top: 20px;
-                    }
-                    input[type="text"] {
-                        color: black; /* Ensure text color is black */
-                    }
-                    .contact-button,
-                    .projects-button {
-                        background-color: #ffffffb5;
-                        padding: 10px 20px;
-                        margin-right: 1px;
-                        border: 2px solid white;
-                        border-radius: 5px;
-                        color: black;
-                        text-decoration: none;
-                        font-size: 18px;
-                        font-weight: bold;
-                        display: block;
-                        text-align: center;
-                        transition: background-color 0.3s ease;
-                    }
-                    .contact-button:hover,
-                    .projects-button:hover {
-                        background-color: #e0e0e0;
-                    }
-                    .footer-button {
-                        background-color: #2d3033;
-                        color: white;
-                        font-weight: bold;
-                        border-radius: 5px;
-                        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-                        transition: opacity 0.3s ease;
-                        padding: 10px 20px;
-                    }
-                    .footer-button:hover {
-                        opacity: 0.7;
-                    }
-                </style>
-            </head>
-            <body>
-                <div class="container">
-                    <div class="form-container">
-                        <form action="/search" method="get" class="space-y-2">
-                            <a href="mailto:yashwanth6678@gmail.com" class="contact-button">Contact</a>
-                            <br><br>
-                            <a href="https://yashwanthwebproject.netlify.app" class="projects-button">Web Development Projects</a>
-                            <br><br>
-                            <label for="query" class="text-lg font-bold" style="text-decoration: underline; font-size: 18px; display: inline-block; vertical-align: middle;">BOOKMYSHOW MOVIES LIVE RATINGS COUNT</label>
-                            <br><br>
-                            <input type="text" id="query" name="query" required placeholder="Movie Name" class="px-4 py-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:border-blue-400 focus:ring-blue-400">
-                            <br><br>
-                            <button type="submit" class="px-4 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">Search</button>
-                        </form>
-                        <button class="footer-button" onclick="window.history.back()">© ® Developed By Yashwanth R</button>
-                    </div>
-                </div>
-            </body>
+                });
+            </script>
+        </body>
         </html>
     `);
 });
@@ -135,7 +205,6 @@ app.get('/search', async (req, res) => {
     let page;
     try {
         page = await browser.newPage();
-
         const encodedQuery = encodeURIComponent(`${modifiedQuery} site:bookmyshow.com`);
         const url = `https://www.google.com/search?q=${encodedQuery}`;
 
@@ -163,10 +232,9 @@ app.get('/search', async (req, res) => {
                         <meta http-equiv="X-UA-Compatible" content="IE=edge">
                         <meta name="viewport" content="width=device-width, initial-scale=1.0">
                         <title>BookMyShow Ratings</title>
-                        <link rel="icon" href="https://m.media-amazon.com/images/G/01/imdb/images-ANDW73HA/favicon_desktop_32x32._CB1582158068_.png" type="image/x-icon">
                         <style>
                             body {
-                                background-image: url('https://wallpaperaccess.com/full/1567770.gif');
+                                background-image: url('https://i.postimg.cc/wvTfCXdv/plant-leaf-flower-blossom.png');
                                 background-size: cover;
                                 background-repeat: no-repeat;
                                 background-attachment: fixed;
@@ -180,7 +248,7 @@ app.get('/search', async (req, res) => {
                                 margin-top: 20px;
                             }
                             h1 {
-                                color: #7d4242; /* Changed color for better readability */
+                                color: #7d4242;
                             }
                             .rating-text {
                                 font-weight: bold;
@@ -197,7 +265,7 @@ app.get('/search', async (req, res) => {
                             <div class="result-container">
                                 <h1>Ratings for "${query}"</h1>
                                 <p class="rating-text">${ratingInfo}</p>
-                                <button onclick="window.history.back()">Back</button>
+                                <button onclick="window.history.back()">Go Back</button>
                             </div>
                         </div>
                     </body>
@@ -205,13 +273,13 @@ app.get('/search', async (req, res) => {
             `;
 
             searchCache.set(modifiedQuery, resultHtml);
+
             res.send(resultHtml);
         } else {
-            res.send('No ratings found');
+            res.status(404).send('No ratings found for the movie');
         }
-    } catch (error) {
-        console.error(error);
-        res.status(500).send('Error retrieving data');
+    } catch (err) {
+        res.status(500).send('An error occurred while fetching ratings');
     } finally {
         if (page) {
             await page.close();
@@ -220,5 +288,5 @@ app.get('/search', async (req, res) => {
 });
 
 app.listen(port, () => {
-    console.log(`Server is running at http://localhost:${port}`);
+    console.log(`Server is running on port ${port}`);
 });
