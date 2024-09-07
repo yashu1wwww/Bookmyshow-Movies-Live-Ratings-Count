@@ -1,6 +1,6 @@
 # Bookmyshow-Movies-Live-Ratings-Count
 
-IMDb Movies TV Shows Ratings Counts, Using Google Search web scraping techniques
+Bookmyshow Movies Live Ratings Counts, Using Google Search web scraping techniques
 
 # Since Bms doesn't provide an API key, so used Google's displayed text to fetch and display the output
 
