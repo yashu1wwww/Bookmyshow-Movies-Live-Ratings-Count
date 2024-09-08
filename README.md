@@ -2,6 +2,10 @@
 
 Bookmyshow Movies Live Ratings Counts, Using Google Search web scraping techniques
 
+# Search Here:
+
+https://bookmyshow-movies-live-ratings-count.onrender.com/
+
 ## Since Bms doesn't provide an API key, so used Google's displayed text to fetch and display the output
 
 ## Note: Only Its Displays Ratings Count Not Interested Counts
@@ -15,10 +19,6 @@ you can change the text in the URL for another search.
 https://bookmyshow-movies-live-ratings-count.onrender.com/Saaho
 
 change "Saaho" to the name of another movie.
-
-# Search Here:
-
-https://bookmyshow-movies-live-ratings-count.onrender.com/
 
 ## Feel Free To Fork the code for better improvement..
 
