@@ -4,6 +4,8 @@ Bookmyshow Movies Live Ratings Counts, Using Google Search web scraping techniqu
 
 ## Since Bms doesn't provide an API key, so used Google's displayed text to fetch and display the output
 
+## Note: Only Its Displays Ratings Count Not Interested Counts
+
 Just Enter Movie Name or Movie Name With Year
 
 you can change the text in the URL for another search.
