@@ -42,7 +42,7 @@ app.get('/', (req, res) => {
 
                 body {
                     font-family: Arial, sans-serif;
-                    background-image: url('https://i.postimg.cc/wvTfCXdv/plant-leaf-flower-blossom.png');
+                    background-image: url('https://images.unsplash.com/photo-1710166755691-1a9963ef6d7b?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
                     background-size: cover;
                     background-position: center;
                     background-repeat: no-repeat;
@@ -136,7 +136,7 @@ app.get('/', (req, res) => {
             </p>
             <br>
             <div class="container">
-			 <button style="background-color: #d5c5b57d; padding: 10px 20px; margin-right: 10px;">
+			 <button style="background-color: #d5c5b57d; padding: 10px 20px; margin-right: 4px;">
         <a style="color: black; text-decoration: none; font-size: 14px; font-weight: bold;">BOOKMYSHOW MOVIES LIVE RATING COUNT</a>
     </button>
     <br><br>
@@ -235,7 +235,7 @@ app.get('/search', async (req, res) => {
                         <title>BookMyShow Movies Ratings Live Count</title>
                         <style>
                             body {
-                                background-image: url('https://i.postimg.cc/wvTfCXdv/plant-leaf-flower-blossom.png');
+                                background-image: url('https://images.unsplash.com/photo-1710166755691-1a9963ef6d7b?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
                                 background-size: cover;
                                 background-repeat: no-repeat;
                                 background-attachment: fixed;
